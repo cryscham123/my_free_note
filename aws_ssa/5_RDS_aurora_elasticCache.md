@@ -15,14 +15,19 @@
 	- Security
 	- Scalability
 	- High availability
+### auto scaling
+- must set `maximum storage threshold`
+1. free storage is less then 10% of allocated storage
+2. low-storage lasts at least 5 minutes
+3. 6 hours have passed since last modification
 
 ## RDS read replicas for read scalibity
-- asynchronous replication
 - up to 15 read replicas
-- within AZ, cross AZ, cross region (dont pay for data transfer across AZ, not across region)
+- within AZ, cross AZ, cross region (`dont pay for data transfer across AZ, not across region`)
 - read replicas can be promoted to a standalone database
 
-## multi AZ
+### cross AZ
+- used for disaster recovery(not used for scaling)
 - synchronous replication
 - failover to standby in case of primary failure
 - no manual intervention
