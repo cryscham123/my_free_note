@@ -1,0 +1,56 @@
+# Amazon RDS
+- Amazon RDS is a managed relational database service that provides a highly available, scalable, and secure database.
+- Amazon RDS supports multiple database engines:
+	- Amazon Aurora
+	- MySQL
+	- MariaDB
+	- PostgreSQL
+	- Oracle
+	- Microsoft SQL Server
+- Amazon RDS provides the following features:
+	- Automated backups
+	- Multi-AZ deployments
+	- Read replicas
+	- Monitoring
+	- Security
+	- Scalability
+	- High availability
+
+## RDS read replicas for read scalibity
+- asynchronous replication
+- up to 15 read replicas
+- within AZ, cross AZ, cross region (dont pay for data transfer across AZ, not across region)
+- read replicas can be promoted to a standalone database
+
+## multi AZ
+- synchronous replication
+- failover to standby in case of primary failure
+- no manual intervention
+### from single AZ to multi AZ
+- zero downtime
+- just modify for the database instance
+
+## Amazon Aurora
+- MySQL and PostgreSQL compatible
+- cloud optimized (5 times faster than MySQL, 3 times faster than PostgreSQL)
+- storage auto scaling
+- 15 read replicas (cross region)
+- failover instantaneously (less than 30 seconds through master node)
+- cost more but effective
+### High Availability and Read Scalability
+- 6 copies of data across 3 AZs (4 copies is needed for write, 3 copies is needed for read)
+- self-healing storage
+- storage is striped across 100s of volumes
+
+## backup
+### RDS
+- Automated backup (can disable, 5 minutes backup window)
+- Manual snapshot
+- restore => new database
+
+### Aurora
+- Automated backup (cannot disable, point-in-time recovery)
+- Manual snapshot
+- restore => new database
+
+## security
