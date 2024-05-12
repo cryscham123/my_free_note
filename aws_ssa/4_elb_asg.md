@@ -10,7 +10,7 @@
 - can use `sticky sessions` through `cookies`
 #### target group
 - EC2 instances
-- EC2 tasks
+- ECS tasks
 - Lambda functions
 - IP addresses (private)
 #### routing

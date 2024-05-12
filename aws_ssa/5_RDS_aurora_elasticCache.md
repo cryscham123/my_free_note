@@ -47,15 +47,30 @@
 - self-healing storage
 - storage is striped across 100s of volumes
 
+### Global aurora
+- 1 primary region
+- 5 read-only secondary regions
+- replication lag is less than 1 second
+- up to 16 read replicas per secondary region
+- failover to secondary region
+- `cross-region replication takes less than 1 second`
+
 ## backup
 ### RDS
 - Automated backup (can disable, 5 minutes backup window)
-- Manual snapshot
-- restore => new database
+- Manual snapshot (retention as log as you want)
+- snapshot restore => new database
+- s3 restore
 
 ### Aurora
 - Automated backup (cannot disable, point-in-time recovery)
-- Manual snapshot
-- restore => new database
+- Manual snapshot (retention as log as you want)
+- snapshot restore => new database
+- Percona XtraBackup, s3 restore
 
 ## security
+
+## ElasticCache
+- in-memory caching service
+- Redis or Memcached (no high availability and backup)
+- heavy application code change
